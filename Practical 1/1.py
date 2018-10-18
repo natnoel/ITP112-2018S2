@@ -1,0 +1,5 @@
+x = int(input("Enter 1st number: "))
+y = int(input("Enter 2nd number: "))
+print(f"The sum of the 2 numbers: {x+y}")
+print("The difference of the 2 numbers: ", x-y)
+print("The product of the 2 numbers: " + str(x*y))
