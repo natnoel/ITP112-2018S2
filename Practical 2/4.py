@@ -26,12 +26,14 @@ class BankAccount:
             return 0.01
         elif str(self.acc_no).startswith('0'):
             return 0.005
+        else:
+            return 0
 
     def get_interest(self):
         return self.bal * self.get_interest_rate()
 
 
-acc = BankAccount('00-12345-11')
+acc = BankAccount('10-12345-11')
 
 acc.deposit(500)
 print(f"You have", acc.bal)
