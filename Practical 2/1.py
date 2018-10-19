@@ -3,34 +3,48 @@ class Customer:
     __name = ''
 
     def __init__(self, id, name):
-        if len(id) != 5:
-            print("ID has incorrect length")
-        elif id[-1].isalpha():
-            print("Last digit is not alpha")
-        else:
+        if self.is_valid_id(id):
             self.__customer_id = id
-            self.__name = name
+        self.__name = name
 
     # Accessors
-    def getID(self):
+    def get_id(self):
         return self.__customer_id
 
-    def getName(self):
+    def get_name(self):
         return self.__name
 
     # Mutators
-    def setID(self, id):
-        self.__customer_id = id
+    def set_id(self, id):
+        if self.is_valid_id(id):
+            self.__customer_id = id
 
-    def setName(self, name):
+    def set_name(self, name):
         self.__name = name
 
-c1 = Customer('1', 'Andy Tan')
+    @staticmethod
+    def is_valid_id(id):
+        if len(id) != 5:
+            print("ID has incorrect length")
+            return False
+        elif not id[-1].isalpha():
+            print("Last digit is not alpha")
+            return False
+        else:
+            return True
+
+
+c1 = Customer('12345', 'Andy Tan')
 print("===================")
-print(f"Cust ID: {c1.getID()}")
-print(f"Cust Name: {c1.getName()}")
-c1.setID(2)
-c1.setName('Chi Koon')
+print(f"Cust ID: {c1.get_id()}")
+print(f"Cust Name: {c1.get_name()}")
+c1.set_id('2')
+c1.set_name('Chi Koon')
 print("===================")
-print(f"Cust ID: {c1.getID()}")
-print(f"Cust Name: {c1.getName()}")
+print(f"Cust ID: {c1.get_id()}")
+print(f"Cust Name: {c1.get_name()}")
+c1.set_id('2758d')
+c1.set_name('Mr Lee')
+print("===================")
+print(f"Cust ID: {c1.get_id()}")
+print(f"Cust Name: {c1.get_name()}")
