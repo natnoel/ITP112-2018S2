@@ -22,6 +22,11 @@ class Customer:
     def set_name(self, name):
         self.__name = name
 
+    def display_details(self):
+        print("===== Customer Details ======")
+        print("Customer ID: ", self.get_id())
+        print("Customer Name: ", self.get_name())
+
     @staticmethod
     def is_valid_id(id):
         if len(id) != 5:
@@ -40,11 +45,7 @@ print(f"Cust ID: {c1.get_id()}")
 print(f"Cust Name: {c1.get_name()}")
 c1.set_id('2')
 c1.set_name('Chi Koon')
-print("===================")
-print(f"Cust ID: {c1.get_id()}")
-print(f"Cust Name: {c1.get_name()}")
+c1.display_details()
 c1.set_id('2758d')
 c1.set_name('Mr Lee')
-print("===================")
-print(f"Cust ID: {c1.get_id()}")
-print(f"Cust Name: {c1.get_name()}")
+c1.display_details()
