@@ -29,7 +29,7 @@ class Student(User):
 
 
 # Part (c) Implement assign_students() Function
-def assign_students(teacher, group, number):
+def assign_students(teacher, group, class_size):
     stud_num = 1
 
     while stud_num <= class_size:
@@ -37,7 +37,10 @@ def assign_students(teacher, group, number):
         first_name = input(f'What is the first name of student {stud_num}: ')
         last_name = input(f'What is the last name of student {stud_num}: ')
 
-        teacher.add_studemt(Student(email, first_name, last_name))
+        stud = Student(email, first_name, last_name)
+        stud.group = group
+
+        teacher.add_studemt(stud)
 
         stud_num += 1
 
